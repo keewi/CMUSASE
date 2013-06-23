@@ -132,6 +132,7 @@
   .navbar-fixed-top .container,
   .navbar-fixed-bottom .container {
     width: 1170px;
+    /*display:fixed;*/
   }
   .span12 {
     width: 1170px;
