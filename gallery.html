@@ -8,9 +8,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://blueimp.github.com/cdn/css/bootstrap.min.css">
+<!--[if lt IE 7]><link rel="stylesheet" href="http://blueimp.github.com/cdn/css/bootstrap-ie6.min.css"><![endif]-->
+<link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://blueimp.github.com/cdn/js/bootstrap.min.js"></script>
+<script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
+<script src="js/bootstrap-image-gallery.min.js"></script>
+
     <style>
 
     /* GLOBAL STYLES
@@ -314,105 +323,32 @@
 
 
 
-    <!-- Carousel
+    <!-- Gallery
     ================================================== -->
-    <div id="myCarousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="img/slide-01.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Sign up today</a>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/slide-02.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Learn more</a>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="img/slide-03.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-    </div><!-- /.carousel -->
+    <!-- modal-gallery is the modal dialog used for the image gallery -->
+<div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3 class="modal-title"></h3>
+    </div>
+    <div class="modal-body"><div class="modal-image"></div></div>
+    <div class="modal-footer">
+        <a class="btn btn-primary modal-next">Next <i class="icon-arrow-right icon-white"></i></a>
+        <a class="btn btn-info modal-prev"><i class="icon-arrow-left icon-white"></i> Previous</a>
+        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000"><i class="icon-play icon-white"></i> Slideshow</a>
+        <a class="btn modal-download" target="_blank"><i class="icon-download"></i> Download</a>
+    </div>
+</div>
+<div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+    <a href="#" title="Banana" data-gallery="gallery">Banana</a>
+    <a href="#" title="Apple" data-gallery="gallery">Apple</a>
+    <a href="#" title="Orange" data-gallery="gallery">Orange</a>
+</div>
 
 
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div><!-- /.span4 -->
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div><!-- /.span4 -->
-        <div class="span4">
-          <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div><!-- /.span4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <img class="featurette-image pull-right" src="img/browser-icon-chrome.png">
-        <h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <img class="featurette-image pull-left" src="img/browser-icon-firefox.png">
-        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <img class="featurette-image pull-right" src="img/browser-icon-safari.png">
-        <h2 class="featurette-heading">And lastly, this one. <span class="muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
 
 
       <!-- FOOTER -->
